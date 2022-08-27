@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="./app.js" type="text/javaScript"></script>
+</body>
+</html>
+[6:23 AM, 8/20/2022] Z.A😎: // 3. Write a JavaScript function that generates all combinations of a string.
+// Example string : 'dog'
+// Expected Output : d,do,dog,o,og,g
+[6:23 AM, 8/20/2022] Z.A😎: function combinator (s) {
+    list_of_strings = new Array();
+    for(i=0;i<s.length;i++) {
+        for(j=i+1;j<s.length+1;j++) {
+            list_of_strings.push(s.slice(i, j));
+        }
+    }
+    return list_of_strings;
+ }
+ 
+ document.write(combinator("dog"));
+[6:44 AM, 8/20/2022] Z.A😎: //1
+const num = 124323;
+const reverse = (num) => parseInt(String(num)
+.split("")
+.reverse()
+.join(""), 10);
+console.log(reverse(num));
+[6:45 AM, 8/20/2022] Z.A😎: //2
+function checkPalindrome(string) {
+
+    // find the length of a string
+    const len = string.length;
+
+    // loop through half of the string
+    for (let i = 0; i < len / 2; i++) {
+
+        // check if first and last string are same
+        if (string[i] !== string[len - 1 - i]) {
+            return 'It is not a palindrome';
+        }
+    }
+    return 'It is a palindrome';
+}
+
+// take input
+const string = prompt('Enter a string: ');
+
+// call the function
+const value = checkPalindrome(string);
+
+console.log(value);
+[6:49 AM, 8/20/2022] Z.A😎: //4
+function alpha(str) {
+    var arr = str.split(""); // splits the string
+    res = arr.sort().join(""); // sort the array and joins to form a string
+    return res; // returns the result
+  }
+  console.log("taking geeksforgeeks as a string");
+  console.log(alpha("geeksforgeeks"));
+[8:36 AM, 8/20/2022] Z.A😎: //10 
+var arr=[23,45,78,23];
+Function secondval(arr){
+arr= arr.sort();
+Console.log("second smaller = " + arr[1] + "& second greater = "+ arr[arr.length-2] );
+}
+[9:27 AM, 8/20/2022] Z.A😎: //5
+function uppercase(str)
+{
+  var array1 = str.split(' ');
+  var newarray1 = [];
+    
+  for(var x = 0; x < array1.length; x++){
+      newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
+  }
+  return newarray1.join(' ');
+}
+console.log(uppercase("the quick brown fox"));
+[12:04 AM, 8/21/2022] Z.A😎: //6
+function longest(string) {
+    var arr = string.split(' ');
+    var longest;
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[j].length > arr[i].length) {
+                longest = arr[j];
+            }
+        }
+    }
+    document.write(longest);
+}
+longest("Web Development Tutorial");
+[12:05 AM, 8/21/2022] Z.A😎: //7
+function occurence(string) {
+    var count = 0;
+    var vowels = ["a", "e", "i", "o", "u"];
+    for (var i = 0; i < string.length; i++) {
+        for (var j = 0; j < vowels.length; j++) {
+            if (string[i].toLowerCase() === vowels[j].toLowerCase()) {
+                count++;
+            }
+        }
+    }
+    document.write(count);
+}
+occurence("The quick brown fox");
+[12:05 AM, 8/21/2022] Z.A😎: //8 
+function prime(num) {
+    if (num > 1) {
+        var isPrime = true;
+        for (var i = 2; i < num; i++) {
+            if (num % i === 0) {
+                isPrime = false;
+            }
+        }
+        if (isPrime) {
+            document.write(num + " is a prime number");
+        }
+        else {
+            document.write(num + " is not a prime number");
+        }
+    }
+}
+prime(5);
+[12:05 AM, 8/21/2022] Z.A😎: //9
+function parameter(argumentType) {
+    return typeof (argumentType);
+}
+var a = parameter(new Date());
+var a = parameter(1);
+var a = parameter("1");
+var a = parameter(true);
+var a = parameter();
+document.write(a);
